@@ -50,12 +50,19 @@
             <p class="eyebrow">YOUR DEGREE</p>
             <h2>Semesters</h2>
           </div>
-          <span class="muted small">6 semesters</span>
+          <div class="section-actions">
+            <span class="muted small">6 semesters</span>
+            <button class="button button-quiet" id="add-subject-top" type="button">＋ Add subject</button>
+          </div>
         </div>
         <nav id="semester-tabs" class="semester-grid" aria-label="Choose semester"></nav>
       </section>
 
       <section class="planner-panel">
+        <div class="subject-list-wrap" aria-live="polite">
+          <p class="eyebrow">YOUR SUBJECTS</p>
+          <div id="subject-list" class="subject-list"><span class="muted small">No subjects added yet.</span></div>
+        </div>
         <div class="panel-heading">
           <div>
             <p class="eyebrow" id="semester-kicker">SEMESTER 1</p>
@@ -119,7 +126,7 @@
       <input type="hidden" id="task-id">
       <div class="form-grid">
         <label>Date <input id="task-date" type="date" required></label>
-        <label>Subject <input id="task-subject" type="text" placeholder="e.g. Communication" required maxlength="100"></label>
+        <label>Subject <input id="task-subject" list="subject-options" type="text" placeholder="e.g. Communication" required maxlength="100"><datalist id="subject-options"></datalist></label>
       </div>
       <label>Reading material <span class="field-hint">Include chapters, pages, authors or notes.</span>
         <textarea id="task-reading" rows="4" placeholder="MS Chapter 6, pp." required></textarea>

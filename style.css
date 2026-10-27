@@ -164,3 +164,11 @@ footer span { color:var(--accent); margin-left:5px; }
 .attachment-note { margin: 0 0 16px; }
 [hidden] { display: none !important; }
 @media (max-width:600px) { .auth-panel { padding:20px; } .account-bar { align-items:flex-start; } }
+
+/* Subject management additions */
+.section-actions { display:flex; align-items:center; gap:12px; flex-wrap:wrap; justify-content:flex-end; }
+.subject-list-wrap { padding:16px 20px; margin-bottom:18px; border:1px solid var(--line); border-radius:14px; background:#fffdfa; }
+.subject-list-wrap .eyebrow { margin:0 0 10px; }
+.subject-list { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.subject-chip { display:inline-flex; align-items:center; padding:7px 11px; border:1px solid var(--line); border-radius:999px; background:var(--surface, #f4eee6); color:var(--ink, #3e352f); font-size:12px; }
+@media (max-width:600px) { .section-actions { justify-content:flex-start; } .subject-list-wrap { padding:14px; } }
