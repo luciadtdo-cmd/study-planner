@@ -1,0 +1,63 @@
+/* Extra styling for private file attachments */
+.attachment-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  margin-top: 8px;
+  min-width: 0;
+}
+.attachment-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 100%;
+}
+.attachment-download {
+  border: 1px solid #d8c9bc;
+  border-radius: 8px;
+  background: #fbf7f2;
+  color: #4b4038;
+  padding: 7px 10px;
+  font: inherit;
+  font-size: 0.9rem;
+  text-align: left;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+.attachment-download:hover {
+  background: #f1e7dc;
+}
+.attachment-remove {
+  border: 0;
+  background: transparent;
+  color: #7b5c4d;
+  padding: 5px 3px;
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+#task-files {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+  border: 1px solid #d8c9bc;
+  border-radius: 10px;
+  background: #fffdfa;
+  box-sizing: border-box;
+}
+#pending-files ul {
+  margin: 5px 0 0;
+  padding-left: 20px;
+}
+#pending-files li {
+  overflow-wrap: anywhere;
+  margin: 3px 0;
+}
+.task-main .attachment-list {
+  margin-top: 10px;
+}

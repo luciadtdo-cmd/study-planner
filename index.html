@@ -9,6 +9,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="attachments.css">
 </head>
 <body>
   <div class="app-shell">
@@ -41,74 +42,75 @@
           <p id="auth-message" class="auth-message" role="status"></p>
         </form>
       </section>
+
       <div id="planner-content" hidden>
         <div class="account-bar"><span id="signed-in-email"></span><button class="button button-quiet" id="sign-out" type="button">Log out</button></div>
 
-      <section class="semester-section">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">YOUR DEGREE</p>
-            <h2>Semesters</h2>
-          </div>
-          <div class="section-actions">
-            <span class="muted small">6 semesters</span>
-            <button class="button button-quiet" id="add-subject-top" type="button">＋ Add subject</button>
-          </div>
-        </div>
-        <nav id="semester-tabs" class="semester-grid" aria-label="Choose semester"></nav>
-      </section>
-
-      <section class="planner-panel">
-        <div class="subject-list-wrap" aria-live="polite">
-          <p class="eyebrow">YOUR SUBJECTS</p>
-          <div id="subject-list" class="subject-list"><span class="muted small">No subjects added yet.</span></div>
-        </div>
-        <div class="panel-heading">
-          <div>
-            <p class="eyebrow" id="semester-kicker">SEMESTER 1</p>
-            <h2 id="semester-title">Semester 1</h2>
-            <p class="muted" id="semester-dates">September – December</p>
-          </div>
-          <button class="button button-primary" id="add-task-top" type="button">＋ Add reading</button>
-        </div>
-
-        <div class="progress-card">
-          <div class="progress-copy">
+        <section class="semester-section">
+          <div class="section-heading">
             <div>
-              <span class="progress-label" id="progress-month-label">September progress</span>
-              <p class="progress-number"><strong id="progress-number">0%</strong><span class="muted" id="progress-count">0 of 0 completed</span></p>
+              <p class="eyebrow">YOUR DEGREE</p>
+              <h2>Semesters</h2>
             </div>
-            <span class="progress-symbol" aria-hidden="true">✳</span>
+            <div class="section-actions">
+              <span class="muted small">6 semesters</span>
+              <button class="button button-quiet" id="add-subject-top" type="button">＋ Add subject</button>
+            </div>
           </div>
-          <div class="progress-track" role="progressbar" aria-label="Monthly reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-track">
-            <div class="progress-fill" id="progress-fill"></div>
-          </div>
-        </div>
+          <nav id="semester-tabs" class="semester-grid" aria-label="Choose semester"></nav>
+        </section>
 
-        <div class="month-toolbar">
-          <div>
-            <p class="eyebrow">PLAN BY MONTH</p>
-            <h3>Your reading list</h3>
+        <section class="planner-panel">
+          <div class="subject-list-wrap" aria-live="polite">
+            <p class="eyebrow">YOUR SUBJECTS</p>
+            <div id="subject-list" class="subject-list"><span class="muted small">No subjects added yet.</span></div>
           </div>
-          <label class="filter-label">Show
-            <select id="status-filter">
-              <option value="all">All tasks</option>
-              <option value="Not started">Not started</option>
-              <option value="In progress">In progress</option>
-              <option value="Completed">Completed</option>
-            </select>
-          </label>
-        </div>
-        <nav id="month-tabs" class="month-tabs" aria-label="Choose month"></nav>
-        <div id="task-list" class="task-list"></div>
-        <div id="empty-state" class="empty-state" hidden>
-          <span class="empty-icon">✎</span>
-          <h3>A fresh page</h3>
-          <p>No reading tasks for this month yet. Add your first task and make a plan that works for you.</p>
-          <button class="button button-primary" id="add-task-empty" type="button">＋ Add your first reading</button>
-        </div>
-      </section>
-      <p class="privacy-note"><span aria-hidden="true">⌂</span> Your reading tasks are saved to your personal account and sync when you log in on another device. File attachments are not synced yet.</p>
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow" id="semester-kicker">SEMESTER 1</p>
+              <h2 id="semester-title">Semester 1</h2>
+              <p class="muted" id="semester-dates">September – December</p>
+            </div>
+            <button class="button button-primary" id="add-task-top" type="button">＋ Add reading</button>
+          </div>
+
+          <div class="progress-card">
+            <div class="progress-copy">
+              <div>
+                <span class="progress-label" id="progress-month-label">September progress</span>
+                <p class="progress-number"><strong id="progress-number">0%</strong><span class="muted" id="progress-count">0 of 0 completed</span></p>
+              </div>
+              <span class="progress-symbol" aria-hidden="true">✳</span>
+            </div>
+            <div class="progress-track" role="progressbar" aria-label="Monthly reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-track">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+          </div>
+
+          <div class="month-toolbar">
+            <div>
+              <p class="eyebrow">PLAN BY MONTH</p>
+              <h3>Your reading list</h3>
+            </div>
+            <label class="filter-label">Show
+              <select id="status-filter">
+                <option value="all">All tasks</option>
+                <option value="Not started">Not started</option>
+                <option value="In progress">In progress</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </label>
+          </div>
+          <nav id="month-tabs" class="month-tabs" aria-label="Choose month"></nav>
+          <div id="task-list" class="task-list"></div>
+          <div id="empty-state" class="empty-state" hidden>
+            <span class="empty-icon">✎</span>
+            <h3>A fresh page</h3>
+            <p>No reading tasks for this month yet. Add your first task and make a plan that works for you.</p>
+            <button class="button button-primary" id="add-task-empty" type="button">＋ Add your first reading</button>
+          </div>
+        </section>
+        <p class="privacy-note"><span aria-hidden="true">⌂</span> Your reading tasks and private file attachments are saved to your account and sync when you log in on another device.</p>
       </div>
     </main>
     <footer>Made for your learning journey <span>✳</span></footer>
@@ -134,7 +136,11 @@
       <label>Website link <span class="field-hint">Optional — paste a URL to an article or online reading.</span>
         <input id="task-url" type="url" placeholder="https://example.com/article">
       </label>
-      <p class="field-hint attachment-note">File attachments are not available in this synced version yet. You can add a website link above.</p>
+      <label>File attachments <span class="field-hint">Optional — choose one or more files. Maximum 25 MB per file.</span>
+        <input id="task-files" type="file" multiple>
+      </label>
+      <div id="pending-files" class="attachment-list" aria-live="polite"></div>
+      <div id="existing-attachments" class="attachment-list" aria-live="polite"></div>
       <label>Status
         <select id="task-status">
           <option>Not started</option>
