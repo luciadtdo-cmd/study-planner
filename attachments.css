@@ -74,3 +74,48 @@
 .task-main .attachment-list {
     margin-top: 6px;
 }
+
+
+/* File attachments in the Add reading window */
+#pending-files {
+    margin-top: 6px;
+    font-size: 0.9em;
+    color: #6f5c4e;
+}
+
+#pending-files ul {
+    margin: 6px 0 0;
+    padding-left: 18px;
+}
+
+#pending-files li {
+    margin: 5px 0;
+    overflow-wrap: anywhere;
+}
+
+#existing-attachments {
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: #6f5c4e;
+}
+
+#existing-attachments .attachment-list {
+    gap: 7px;
+}
+
+#existing-attachments .attachment-download {
+    font-family: inherit;
+    font-size: 0.95em;
+    color: #6f5c4e;
+}
+
+#existing-attachments .attachment-remove {
+    font-size: 0.8em;
+    color: #a18a78;
+}
+
+#task-files {
+    font-family: inherit;
+    font-size: 0.9em;
+    color: #6f5c4e;
+}
