@@ -1,0 +1,12 @@
+{
+  "name": "Study Planner",
+  "short_name": "Study Planner",
+  "description": "A calm, personal reading planner for your degree.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f8f5f0",
+  "theme_color": "#f4eee6",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4eee6">
+  <meta name="description" content="A calm, personal reading planner for your degree.">
+  <title>Study Planner</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Study Planner home">
+        <span class="brand-mark">sp.</span>
+        <span>study planner</span>
+      </a>
+      <div class="topbar-note">A little progress, every day.</div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="eyebrow">YOUR PERSONAL SPACE</p>
+        <h1>Study Planner</h1>
+        <p class="intro-copy">Make space for what matters. Plan your reading, one semester at a time.</p>
+      </section>
+
+      <section class="semester-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">YOUR DEGREE</p>
+            <h2>Semesters</h2>
+          </div>
+          <span class="muted small">6 semesters</span>
+        </div>
+        <nav id="semester-tabs" class="semester-grid" aria-label="Choose semester"></nav>
+      </section>
+
+      <section class="planner-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow" id="semester-kicker">SEMESTER 1</p>
+            <h2 id="semester-title">Semester 1</h2>
+            <p class="muted" id="semester-dates">September – December</p>
+          </div>
+          <button class="button button-primary" id="add-task-top" type="button">＋ Add reading</button>
+        </div>
+
+        <div class="progress-card">
+          <div class="progress-copy">
+            <div>
+              <span class="progress-label" id="progress-month-label">September progress</span>
+              <p class="progress-number"><strong id="progress-number">0%</strong><span class="muted" id="progress-count">0 of 0 completed</span></p>
+            </div>
+            <span class="progress-symbol" aria-hidden="true">✳</span>
+          </div>
+          <div class="progress-track" role="progressbar" aria-label="Monthly reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-track">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+        </div>
+
+        <div class="month-toolbar">
+          <div>
+            <p class="eyebrow">PLAN BY MONTH</p>
+            <h3>Your reading list</h3>
+          </div>
+          <label class="filter-label">Show
+            <select id="status-filter">
+              <option value="all">All tasks</option>
+              <option value="Not started">Not started</option>
+              <option value="In progress">In progress</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </label>
+        </div>
+        <nav id="month-tabs" class="month-tabs" aria-label="Choose month"></nav>
+        <div id="task-list" class="task-list"></div>
+        <div id="empty-state" class="empty-state" hidden>
+          <span class="empty-icon">✎</span>
+          <h3>A fresh page</h3>
+          <p>No reading tasks for this month yet. Add your first task and make a plan that works for you.</p>
+          <button class="button button-primary" id="add-task-empty" type="button">＋ Add your first reading</button>
+        </div>
+      </section>
+      <p class="privacy-note"><span aria-hidden="true">⌂</span> Your tasks and attached files are saved in this browser on this device. This first version does not sync between devices.</p>
+    </main>
+    <footer>Made for your learning journey <span>✳</span></footer>
+  </div>
+
+  <dialog id="task-dialog" class="task-dialog">
+    <form id="task-form">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">READING PLAN</p>
+          <h2 id="dialog-title">Add reading task</h2>
+        </div>
+        <button type="button" class="icon-button" id="close-dialog" aria-label="Close">×</button>
+      </div>
+      <input type="hidden" id="task-id">
+      <div class="form-grid">
+        <label>Date <input id="task-date" type="date" required></label>
+        <label>Subject <input id="task-subject" type="text" placeholder="e.g. Communication" required maxlength="100"></label>
+      </div>
+      <label>Reading material <span class="field-hint">Include chapters, pages, authors or notes.</span>
+        <textarea id="task-reading" rows="4" placeholder="MS Chapter 6, pp." required></textarea>
+      </label>
+      <label>Website link <span class="field-hint">Optional — paste a URL to an article or online reading.</span>
+        <input id="task-url" type="url" placeholder="https://example.com/article">
+      </label>
+      <label>Attach files <span class="field-hint">Optional — PDF, document or other reading file. Files stay on this device.</span>
+        <input id="task-files" type="file" multiple>
+      </label>
+      <div id="existing-files" class="existing-files"></div>
+      <label>Status
+        <select id="task-status">
+          <option>Not started</option>
+          <option>In progress</option>
+          <option>Completed</option>
+        </select>
+      </label>
+      <p class="form-error" id="form-error" role="alert"></p>
+      <div class="dialog-actions">
+        <button type="button" class="button button-quiet" id="cancel-dialog">Cancel</button>
+        <button type="submit" class="button button-primary" id="save-task">Save task</button>
+      </div>
+    </form>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
