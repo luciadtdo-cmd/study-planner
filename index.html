@@ -27,6 +27,23 @@
         <p class="intro-copy">Make space for what matters. Plan your reading, one semester at a time.</p>
       </section>
 
+      <section id="auth-panel" class="auth-panel">
+        <p class="eyebrow">YOUR PERSONAL ACCOUNT</p>
+        <h2>Welcome to your study space</h2>
+        <p class="auth-copy">Create an account or log in to access your reading plan on different devices.</p>
+        <form id="auth-form">
+          <label>Email address<input id="auth-email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+          <label>Password<input id="auth-password" type="password" autocomplete="current-password" minlength="6" placeholder="At least 6 characters" required></label>
+          <div class="auth-actions">
+            <button class="button button-primary" type="submit" id="auth-submit">Log in</button>
+            <button class="button button-quiet" type="button" id="auth-signup">Create account</button>
+          </div>
+          <p id="auth-message" class="auth-message" role="status"></p>
+        </form>
+      </section>
+      <div id="planner-content" hidden>
+        <div class="account-bar"><span id="signed-in-email"></span><button class="button button-quiet" id="sign-out" type="button">Log out</button></div>
+
       <section class="semester-section">
         <div class="section-heading">
           <div>
@@ -84,7 +101,8 @@
           <button class="button button-primary" id="add-task-empty" type="button">＋ Add your first reading</button>
         </div>
       </section>
-      <p class="privacy-note"><span aria-hidden="true">⌂</span> Your tasks and attached files are saved in this browser on this device. This first version does not sync between devices.</p>
+      <p class="privacy-note"><span aria-hidden="true">⌂</span> Your reading tasks are saved to your personal account and sync when you log in on another device. File attachments are not synced yet.</p>
+      </div>
     </main>
     <footer>Made for your learning journey <span>✳</span></footer>
   </div>
@@ -109,10 +127,7 @@
       <label>Website link <span class="field-hint">Optional — paste a URL to an article or online reading.</span>
         <input id="task-url" type="url" placeholder="https://example.com/article">
       </label>
-      <label>Attach files <span class="field-hint">Optional — PDF, document or other reading file. Files stay on this device.</span>
-        <input id="task-files" type="file" multiple>
-      </label>
-      <div id="existing-files" class="existing-files"></div>
+      <p class="field-hint attachment-note">File attachments are not available in this synced version yet. You can add a website link above.</p>
       <label>Status
         <select id="task-status">
           <option>Not started</option>
@@ -127,6 +142,8 @@
       </div>
     </form>
   </dialog>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
